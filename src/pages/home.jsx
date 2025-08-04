@@ -44,7 +44,7 @@ const Home = () => {
     <div className="p-6 max-w-7xl mx-auto">
       <div className="text-xl font-semibold mb-6 text-center flex justify-between" >🛍️ All Products <div><button
   onClick={() => navigate("/cart")}
-  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4"
+  className="bg-blue-600 text-white px-4 py-2 text-[18px] font-medium rounded hover:bg-blue-700 mb-4"
 >
   View Cart
 </button></div></div>
@@ -64,31 +64,31 @@ const Home = () => {
       </div>
 
       {loading ? <p className="text-center">Loading...</p> : error ? <p className="text-center text-red-500">{error}</p> : (
-       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 ">
   {filteredProducts.map(product => (
     <div
       key={product.id}
       className="border p-2 rounded-lg shadow-sm bg-white text-xs"
-      style={{ maxWidth: "180px" }} 
+    
     >
       <img
         src={product.image}
         alt={product.title}
         className="h-24 w-full object-contain mx-auto mb-2"
-        style={{ maxHeight: "90px" }} 
+        
       />
       <h2 className="text-[11px] font-semibold truncate mb-1 text-gray-800">{product.title}</h2>
       <p className="text-[10px] text-gray-600 mb-2 font-semibold">${product.price}</p>
       <div className="flex justify-between gap-1">
         <button
           onClick={() => handleViewDetail(product.id)}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-0.5 rounded text-[10px]"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded text-[10px]"
         >
           View
         </button>
         <button
           onClick={() => handleAddToCart(product)}
-          className="bg-green-500 hover:bg-green-600 text-white px-2 py-0.5 rounded text-[10px]"
+          className="bg-green-500 hover:bg-green-600 text-white  px-5 py-2  rounded text-[10px]"
         >
           Add
         </button>

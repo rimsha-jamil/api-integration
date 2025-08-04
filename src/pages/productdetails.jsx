@@ -26,9 +26,9 @@ const ProductDetail = () => {
   if (!product) return <p>No product found</p>;
 
   return (
-    <div className="p-10">
+    <div className="p-10 flex flex-col justify-center items-center gap-5">
       <h2>{product.title}</h2>
-      <img src={product.image} alt={product.title} height={200} />
+      <img src={product.image} alt={product.title} className="h-60 w-60" />
       <p><strong>Price:</strong> ${product.price}</p>
       <p><strong>Description:</strong> {product.description}</p>
       <p><strong>Category:</strong> {product.category}</p>
@@ -36,6 +36,6 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDetail; 
 
 
