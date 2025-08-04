@@ -30,11 +30,21 @@ const Home = () => {
   };
 
   const handleAddToCart = (product) => {
-    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    existingCart.push(product);
-    localStorage.setItem("cart", JSON.stringify(existingCart));
-    alert("🛒 Added to Cart");
-  };
+  const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Check if product already exists in cart by id
+  const isAlreadyInCart = existingCart.some((item) => item.id === product.id);
+
+  if (isAlreadyInCart) {
+    alert("🛒 This product is already in the cart!");
+    return;
+  }
+
+  existingCart.push(product);
+  localStorage.setItem("cart", JSON.stringify(existingCart));
+  alert("🛒 Added to Cart");
+};
+
 
   const filteredProducts = selectedCategory === "all"
     ? products

@@ -16,7 +16,7 @@ const CartPage = () => {
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           {cartItems.map((item, index) => (
             <div
               key={index}
